@@ -1,5 +1,4 @@
 // src/components/HootList/HootList.jsx
-export default HootList;
 
 import { Link } from 'react-router-dom';
 
@@ -23,3 +22,5 @@ const HootList = (props) => {
         </main>
       );
         }
+
+        export default HootList;

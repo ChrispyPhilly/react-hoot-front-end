@@ -2,7 +2,14 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import * as hootService from '../../services/hootService';
-const { hootId } = useParams();
+
+const HootForm = (props) => {
+  const [formData, setFormData] = useState({
+    title: '',
+    text: '',
+    category: 'News',
+  });
+  const { hootId } = useParams();
 
 useEffect(() => {
     const fetchHoot = async () => {
@@ -11,13 +18,6 @@ useEffect(() => {
     };
     if (hootId) fetchHoot();
   }, [hootId]);
-
-const HootForm = (props) => {
-  const [formData, setFormData] = useState({
-    title: '',
-    text: '',
-    category: 'News',
-  });
 
   const handleChange = (evt) => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value });
